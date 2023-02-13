@@ -187,4 +187,55 @@
             mobile: false,
         });
     });
+
+
+    $(function() {
+        $('.item').on('click', function() {
+            $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+            $('#imagemodal').modal('show');
+        });
+    });
+
+
+
+    $(function() {
+        $('.item-2').on('click', function() {
+            $('.imageprevie-2').attr('src', $(this).find('img').attr('src'));
+            $('#imagemodal-2').modal('show');
+        });
+    });
+
+
+
+    $(function() {
+        $('.item-3').on('click', function() {
+            $('.imagepreview-3').attr('src', $(this).find('img').attr('src'));
+            $('#imagemodal-3').modal('show');
+        });
+    });
+
+
+
+
+
+    $(function(){
+        $('.minimized').click(function(event) {
+            var i_path = $(this).attr('src');
+            $('body').append('<div id="overlay"></div><div id="magnify"><img src="'+i_path+'"><div id="close-popup"><i></i></div></div>');
+            $('#magnify').css({
+                left: ($(document).width() - $('#magnify').outerWidth())/2,
+                // top: ($(document).height() - $('#magnify').outerHeight())/2 upd: 24.10.2016
+                top: ($(window).height() - $('#magnify').outerHeight())/2
+            });
+            $('#overlay, #magnify').fadeIn('fast');
+        });
+
+        $('body').on('click', '#close-popup, #overlay', function(event) {
+            event.preventDefault();
+
+            $('#overlay, #magnify').fadeOut('fast', function() {
+                $('#close-popup, #magnify, #overlay').remove();
+            });
+        });
+    });
 })(jQuery);
