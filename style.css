@@ -1577,10 +1577,10 @@ a.scrolldown {
     display: none;
     /* position: absolute; upd: 24.10.2016 */
     position: fixed;
-    max-width: 6000px;
+    max-width: 1080px;
     height: auto;
     z-index: 9999;
-    margin-left: -150px;
+    margin-left: -250px;
 }
 #magnify img {
     width: 100%;
